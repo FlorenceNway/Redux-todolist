@@ -1,7 +1,12 @@
-const todos = (state, action) => {
+
+let initialState = {
+    todos: []
+}
+
+const todos = (state = initialState, action) => {
     switch(action.type) {
         case 'ADD_TODO':
-            return [...state, action.payload];
+            return {...state, todos: [...state.todos, action.payload]};
             default:
                 return state;
     }
