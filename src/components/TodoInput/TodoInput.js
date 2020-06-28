@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
 
 const TodoInput = () => {
-
+    const dispatch = useDispatch()
     const [inputValue, setInputValue] = useState("")
 
     const handleChange = (event) => {
         setInputValue(event.target.value)
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        dispatch({type:"ADD_TODO",payload:{id:1, text: inputValue}})
     }
 
     return (
