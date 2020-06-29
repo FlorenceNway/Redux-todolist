@@ -1,12 +1,14 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {deleteToDo} from '../../store/todos.action'
 
 const TodoList = () => {
+    const dispatch = useDispatch()
   const todos = useSelector(state => state.todos)
   console.log('todos', todos)
 
-    const deleteHandler = () => {
-        
+    const deleteHandler = (id) => {
+        dispatch(deleteToDo(id))
     }
 
   return (
@@ -14,7 +16,7 @@ const TodoList = () => {
       {todos.map(todo => (
           <li key={todo.id}>
               <span>{todo.text}</span>
-              <button onClick={deleteHandler}>Remove</button>
+              <button onClick={() => deleteHandler(id)}>Remove</button>
           </li>
       ))}
     </ul>
