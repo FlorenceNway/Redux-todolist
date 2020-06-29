@@ -11,7 +11,7 @@ const TodoInput = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch({type:"ADD_TODO",payload:{id:1, text: inputValue}})
+        dispatch({type:"ADD_TODO",payload: inputValue})
     }
 
     return (
