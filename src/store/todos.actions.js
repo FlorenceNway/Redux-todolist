@@ -1,8 +1,8 @@
 let id = 1;
 
-export const addTodo = (payload) => ({
+export const addTodo = (inputValue) => ({
     type: "ADD_ToDo",
-    payload: {id: id++, text: payload }
+    payload: {id: id++, text: inputValue }
 });
 
 export const removeTodo = (id) => ({
