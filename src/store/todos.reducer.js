@@ -8,7 +8,8 @@ const todos = (state = initialState, {type,payload}) => {
         case 'ADD_TODO':
             return {...state, todos: [...state.todos, payload]};
         case 'REMOVE_TODO':
-            return {...state, todos: [...state.todos, payload]};
+            const filterdToDos = state.todos.filter(todo => todo.id !== payload.id)
+            return {...state, todos: [...filterdToDos]};
         default:
             return state;
     }
