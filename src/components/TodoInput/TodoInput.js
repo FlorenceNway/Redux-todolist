@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
+import {addTodo} from '../../store/todos.actions';
 
 const TodoInput = () => {
     const dispatch = useDispatch()
@@ -11,7 +12,7 @@ const TodoInput = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch({type:"ADD_TODO",payload: inputValue})
+        dispatch(addTodo(inputValue))
     }
 
     return (
