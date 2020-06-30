@@ -3,12 +3,14 @@ let initialState = {
     todos: []
 }
 
-const todos = (state = initialState, action) => {
-    switch(action.type) {
+const todos = (state = initialState, {type,payload}) => {
+    switch(type) {
         case 'ADD_TODO':
-            return {...state, todos: [...state.todos, action.payload]};
-            default:
-                return state;
+            return {...state, todos: [...state.todos, payload]};
+        case 'REMOVE_TODO':
+            return {...state, todos: [...state.todos, payload]};
+        default:
+            return state;
     }
 }
 
