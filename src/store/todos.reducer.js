@@ -12,7 +12,7 @@ const todos = (state = initialState, {type,payload}) => {
             return {...state, todos: [...filterdToDos]};
         case 'COMPLETE_TODO':
             const localTodos = [...state.todos]    
-            const todoIndex = localTodos.findIndex(localTodo => localTodo.id == payload)
+            const todoIndex = localTodos.findIndex(localTodo => localTodo.id === payload)
             localTodos[todoIndex].complete = !localTodos[todoIndex].complete
             return {...state, todos: [...localTodos]}
 
