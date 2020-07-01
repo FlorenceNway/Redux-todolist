@@ -6,7 +6,6 @@ import {removeTodo} from '../../store/todos.actions';
 const TodoList = () => {
     const dispatch = useDispatch()
     const todos = useSelector(state => state.todos)
-    console.log('todos', todos)
 
     const deleteHandler = (id) => {
         dispatch(removeTodo(id))
