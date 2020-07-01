@@ -6,6 +6,7 @@ import {removeTodo} from '../../store/todos.actions';
 const TodoList = () => {
     const dispatch = useDispatch()
     const todos = useSelector(state => state.todos)
+    console.log(todos)
 
     const deleteHandler = (id) => {
         dispatch(removeTodo(id))
@@ -15,6 +16,7 @@ const TodoList = () => {
     <ul>
       {todos.map(todo => (
           <li key={todo.id}>
+              <input type='checkbox'/>
               <span>{todo.text}</span>
               <button onClick={() => deleteHandler(todo.id)}>Remove</button>
           </li>
