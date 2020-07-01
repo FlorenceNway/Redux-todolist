@@ -1,0 +1,12 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+}
+
+input, span {
+    padding: 5px;
+}
