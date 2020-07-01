@@ -13,6 +13,7 @@ const TodoInput = () => {
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(addTodo(inputValue)) //dispatch expect to have object with type and payload props
+        setInputValue('')
     }
 
     return (
