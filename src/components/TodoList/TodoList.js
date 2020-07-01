@@ -20,11 +20,11 @@ const TodoList = () => {
 
   return (
     <ul>
-      {todos.map(todo => (
-          <li key={todo.id}>
-              <input type='checkbox' onChange={() => completeHandler(todo.id)}/>
-              <span>{todo.text}</span>
-              <button onClick={() => deleteHandler(todo.id)}>Remove</button>
+      {todos.map(({id, text, complete}) => (
+          <li key={id}>
+              <input type='checkbox' onChange={() => completeHandler(id)}/>
+              <span>{text}</span>
+              <button onClick={() => deleteHandler(id)}>Remove</button>
           </li>
       ))}
     </ul>
