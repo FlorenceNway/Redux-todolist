@@ -29,15 +29,16 @@ const TodoList = () => {
 
   return (
     <ul>
-      {todos.map(({id, text, complete}) => (
-          <li key={id} className = {complete ? 'crossed' : "" }>
-              <input type='checkbox' onChange={() => completeHandler(id)}/>
-              <span>{text}</span>
-              <button onClick={() => deleteHandler(id)}>Remove</button>
-              <button onClick={() => moveUpHandler(id)}>Up</button>
-              <button onClick={() => moveDownHandler(id)}>Down</button>
-          </li>
-      ))}
+      {todos.map(({id, text, complete}, index) => {
+        const disableMoveDown = todos.length -1 === index
+          return (<li key={id} className = {complete ? 'crossed' : "" }>
+                    <input type='checkbox' onChange={() => completeHandler(id)}/>
+                    <span>{text}</span>
+                    <button onClick={() => deleteHandler(id)}>Remove</button>
+                    <button onClick={() => moveUpHandler(id)} disabled={!index}>Up</button>
+                    <button onClick={() => moveDownHandler(id)} disabled = {disableMoveDown}>Down</button>
+                </li>)
+      })}
     </ul>
   );
 }
