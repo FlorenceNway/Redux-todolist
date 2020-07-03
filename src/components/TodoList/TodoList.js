@@ -18,13 +18,24 @@ const TodoList = () => {
         dispatch(completeTodo(id))
     }
 
+    const moveUpHandler = (id) => {
+      
+    }
+
+    const moveDownHandler = (id) => {
+      
+    }
+
+
   return (
     <ul>
       {todos.map(({id, text, complete}) => (
-          <li key={id}>
+          <li key={id} className = {complete ? 'crossed' : "" }>
               <input type='checkbox' onChange={() => completeHandler(id)}/>
               <span>{text}</span>
               <button onClick={() => deleteHandler(id)}>Remove</button>
+              <button onClick={() => moveUpHandler(id)}>Up</button>
+              <button onClick={() => moveDownHandler(id)}>Down</button>
           </li>
       ))}
     </ul>
