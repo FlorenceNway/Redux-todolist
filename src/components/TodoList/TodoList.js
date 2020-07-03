@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {removeTodo} from '../../store/todos.actions';
-import {completeTodo} from '../../store/todos.actions';
+import {completeTodo, moveUp, moveDown} from '../../store/todos.actions';
 import './TodoList.css';
 
 
