@@ -15,7 +15,13 @@ const todos = (state = initialState, {type,payload}) => {
             const todoIndex = localTodos.findIndex(localTodo => localTodo.id === payload)
             localTodos[todoIndex].complete = !localTodos[todoIndex].complete
             return {...state, todos: [...localTodos]}
-
+        case 'MOVEUP_TODO':
+            const cloneTodos = [...state.todos]    
+            const moveIndex = cloneTodos.findIndex(Todo => Todo.id === payload)
+            const selectedTodo = cloneTodos.splice(moveIndex,1) //get one item in an array
+            cloneTodos.splice(moveIndex - 1, 0, ...selectedTodo) // spread it not to be array
+            return {...state, todos: [...cloneTodos]}
+        
         default:
             return state;
     }
