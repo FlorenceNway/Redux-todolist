@@ -19,11 +19,11 @@ const TodoList = () => {
     }
 
     const moveUpHandler = (id) => {
-      
+      dispatch(moveUp(id))
     }
 
     const moveDownHandler = (id) => {
-      
+      dispatch(moveDown(id))
     }
 
 
