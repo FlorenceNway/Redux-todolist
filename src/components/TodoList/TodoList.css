@@ -10,3 +10,7 @@ li {
 input, span {
     padding: 5px;
 }
+
+.crossed {
+    text-decoration: line-through;
+}
