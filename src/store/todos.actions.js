@@ -14,3 +14,13 @@ export const completeTodo = (id) => ({
     type: "COMPLETE_TODO",
     payload: id
 });
+
+export const moveUp = (id) => ({
+    type: "MOVEUP_TODO",
+    payload: id
+});
+
+export const moveDown = (id) => ({
+    type: "MOVEDOWN_TODO",
+    payload: id
+});
